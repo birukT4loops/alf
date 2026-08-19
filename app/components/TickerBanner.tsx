@@ -1,5 +1,5 @@
 const SEGMENT =
-  "   ★  Schedule a tour today to see why families trust Oakridge Manor Living in Plano, TX   ★  Compassionate assisted living with 24/7 support   ★  Call us: (469) 555-0123   ★  Where comfort, dignity, and care feel like home";
+  "   ★  Schedule a tour today to see why families trust Oakridge Manor Living in Plano, TX   ★  Compassionate assisted living with 24/7 support   ★  Call us: (972) 555-0123   ★  Where comfort, dignity, and care feel like home";
 
 export default function TickerBanner() {
   const items = Array.from({ length: 4 }, (_, i) => (

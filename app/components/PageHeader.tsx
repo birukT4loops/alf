@@ -14,7 +14,7 @@ export default function PageHeader({ title, subtitle, image = "houseExterior" }:
         src={IMAGES[image]}
         alt={title}
         fill
-        priority
+        preload
         className="object-cover"
         sizes="100vw"
       />

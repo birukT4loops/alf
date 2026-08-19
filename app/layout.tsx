@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Open_Sans } from "next/font/google";
+import { Playfair_Display, Open_Sans, Cormorant_Garamond } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./globals.css";
@@ -16,10 +16,18 @@ const openSans = Open_Sans({
   weight: ["300", "400", "600", "700"],
 });
 
+// The brochure's calligraphic subtitle face
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
-  title: "Oakridge Manor Living | Compassionate Assisted Living Community",
+  title: "Oakridge Manor Living | Residential Assisted Living in Allen & Plano, TX",
   description:
-    "Oakridge Manor Living offers compassionate assisted living with personalized care, 24/7 support, nutritious dining, engaging activities, and a welcoming community where seniors can thrive with comfort, dignity, and independence.",
+    "Compassionate Care. Comfortable Living. A Place to Call Home. Oakridge Manor Living is a boutique residential assisted living home where every resident is treated like family — serving Allen, Plano, McKinney, Frisco and North Dallas.",
 };
 
 export default function RootLayout({
@@ -28,7 +36,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${openSans.variable}`}>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${openSans.variable} ${cormorant.variable}`}
+    >
       <body className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex flex-col flex-1">{children}</main>

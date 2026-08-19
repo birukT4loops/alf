@@ -1,140 +1,176 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #14294a;
-  --navy-dark: #0e1f3a;
-  --navy-light: #1d3559;
-  --green: #7fb241;
-  --green-dark: #6a9a34;
-  --green-light: #9ac95c;
-  --cream: #f4f1e8;
-  --cream-dark: #ece7d8;
+  /* --- Brochure brand palette -------------------------------------------
+     Deep forest green + the logo's gold + warm cream, sampled from the
+     Oakridge Manor Living brochure and the LOGOmain.png tree mark. */
+  --forest: #14432c;
+  --forest-dark: #0d2f1e;
+  --forest-light: #1e5c3c;
+  --gold: #b77f0b;        /* the logo gold — solid fills, rules, icons on dark */
+  --gold-light: #d3a63a;  /* gold text on forest backgrounds (4.8:1) */
+  --gold-deep: #8a6208;   /* gold text on cream backgrounds (5.1:1) */
+  --gold-pale: #ead9b0;
+  --cream: #faf5e9;
+  --cream-dark: #f2ead6;
   --text-dark: #2c2c2c;
   --text-medium: #555555;
   --text-light: #888888;
 
-  /* Backward-compatible aliases (old gold theme → new green theme) */
-  --gold: var(--green-dark);
-  --gold-light: var(--green-light);
+  /* Backward-compatible aliases (old navy/green theme → brochure forest/gold),
+     kept so the inner pages restyle without being rewritten. */
+  --navy: var(--forest);
+  --navy-dark: var(--forest-dark);
+  --navy-light: var(--forest-light);
+  --green: var(--gold);
+  --green-dark: var(--gold-deep);
+  --green-light: var(--gold-light);
   --off-white: var(--cream);
 }
 
 @theme inline {
+  --color-forest: var(--forest);
+  --color-forest-dark: var(--forest-dark);
+  --color-forest-light: var(--forest-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-deep: var(--gold-deep);
+  --color-gold-pale: var(--gold-pale);
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+
   --color-navy: var(--navy);
   --color-navy-dark: var(--navy-dark);
   --color-navy-light: var(--navy-light);
   --color-green: var(--green);
   --color-green-dark: var(--green-dark);
   --color-green-light: var(--green-light);
-  --color-cream: var(--cream);
+
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-open-sans);
+  --font-script: var(--font-cormorant);
 }
 
-body {
-  font-family: var(--font-open-sans), Arial, sans-serif;
-  color: var(--text-dark);
-  background: #ffffff;
+@layer base {
+  body {
+    font-family: var(--font-open-sans), Arial, sans-serif;
+    color: var(--text-dark);
+    background: #ffffff;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-playfair), Georgia, serif;
-}
+/* Component classes live in the `components` layer so Tailwind utilities
+   (`hidden`, `not-italic`, …) can still override them. */
+@layer components {
+  /* Brochure section titles: engraved small-caps serif */
+  .display-caps {
+    font-family: var(--font-playfair), Georgia, serif;
+    font-variant-caps: small-caps;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+  }
 
-.section-badge {
-  font-family: var(--font-open-sans), Arial, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--green-dark);
-}
+  /* The brochure's calligraphic subtitle line */
+  .serif-italic {
+    font-family: var(--font-cormorant), "Playfair Display", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+  }
 
-/* Green solid CTA */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--green);
-  color: #fff;
-  font-family: var(--font-open-sans), Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.95rem 2rem;
-  border-radius: 4px;
-  transition: background-color 0.25s ease;
-}
-.btn-primary:hover {
-  background-color: var(--green-dark);
-}
+  .section-badge {
+    font-family: var(--font-open-sans), Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
 
-/* Outlined light CTA (for dark backgrounds) */
-.btn-outline-light {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: transparent;
-  color: #fff;
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
-  font-family: var(--font-open-sans), Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.95rem 2rem;
-  border-radius: 4px;
-  transition: background-color 0.25s ease, border-color 0.25s ease;
-}
-.btn-outline-light:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: #fff;
-}
+  /* Forest CTA — the brochure's solid green blocks */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--forest);
+    color: #fff;
+    font-family: var(--font-open-sans), Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.95rem 2rem;
+    border-radius: 4px;
+    transition: background-color 0.25s ease;
+  }
+  .btn-primary:hover {
+    background-color: var(--forest-light);
+  }
 
-/* Outlined dark CTA (for light backgrounds) */
-.btn-outline-dark {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: transparent;
-  color: var(--navy);
-  border: 1.5px solid var(--navy);
-  font-family: var(--font-open-sans), Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.95rem 2rem;
-  border-radius: 4px;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-.btn-outline-dark:hover {
-  background-color: var(--navy);
-  color: #fff;
-}
+  /* Gold CTA — gold plate with forest lettering (5.2:1) */
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--gold-light);
+    color: var(--forest);
+    font-family: var(--font-open-sans), Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.95rem 2rem;
+    border-radius: 4px;
+    transition: background-color 0.25s ease;
+  }
+  .btn-gold:hover {
+    background-color: var(--gold-pale);
+  }
 
-.serif-italic {
-  font-family: var(--font-playfair), Georgia, serif;
-  font-style: italic;
-}
+  /* Outlined light CTA (for dark backgrounds) */
+  .btn-outline-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    font-family: var(--font-open-sans), Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.95rem 2rem;
+    border-radius: 4px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+  }
+  .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: #fff;
+  }
 
-/* Legacy gold button → solid green (used on inner-page CTAs) */
-.btn-gold {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--green);
-  color: #fff;
-  font-family: var(--font-open-sans), Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.95rem 2rem;
-  border-radius: 4px;
-  transition: background-color 0.25s ease;
-}
-.btn-gold:hover {
-  background-color: var(--green-dark);
+  /* Outlined dark CTA (for light backgrounds) */
+  .btn-outline-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: var(--forest);
+    border: 1.5px solid var(--forest);
+    font-family: var(--font-open-sans), Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.95rem 2rem;
+    border-radius: 4px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .btn-outline-dark:hover {
+    background-color: var(--forest);
+    color: #fff;
+  }
 }
