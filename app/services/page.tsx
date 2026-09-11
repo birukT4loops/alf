@@ -102,7 +102,7 @@ export default function ServicesPage() {
           <p className="section-badge mb-4">Our Services</p>
           <h2
             className="text-3xl md:text-4xl font-semibold mb-5"
-            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
           >
             Everything You Need to Thrive
           </h2>
@@ -173,7 +173,7 @@ export default function ServicesPage() {
             <p className="section-badge mb-4">Amenities</p>
             <h2
               className="text-3xl md:text-4xl font-semibold mb-4"
-              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
             >
               Everything You Need to Feel at Home
             </h2>
@@ -210,7 +210,7 @@ export default function ServicesPage() {
         <h2 className="text-3xl font-semibold text-white mb-4" style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}>
           Experience the Oakridge Manor Living Difference
         </h2>
-        <p className="text-white/70 mb-8 max-w-xl mx-auto text-sm leading-relaxed" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}>
+        <p className="text-white mb-8 max-w-xl mx-auto text-sm leading-relaxed" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}>
           Discover a welcoming assisted living community where compassionate care, personalized support, and meaningful connections come together.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

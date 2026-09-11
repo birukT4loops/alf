@@ -22,7 +22,7 @@ export default function BlogPage() {
           <p className="section-badge mb-4">From Our Community</p>
           <h2
             className="text-3xl md:text-4xl font-semibold mb-4"
-            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
           >
             Stories, Tips &amp; Resources
           </h2>
@@ -46,7 +46,7 @@ export default function BlogPage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute top-3 left-3 px-2 py-1 text-[10px] uppercase tracking-widest font-semibold text-white" style={{ backgroundColor: "rgba(27,42,74,0.85)" }}>
+                <div className="absolute top-3 left-3 px-2 py-1 text-[10px] uppercase tracking-widest font-semibold text-white" style={{ backgroundColor: "rgba(95,150,36,0.85)" }}>
                   {post.category}
                 </div>
               </div>
@@ -65,7 +65,7 @@ export default function BlogPage() {
       </section>
 
       <section className="py-16 px-6 text-center" style={{ backgroundColor: "var(--off-white)" }}>
-        <h2 className="text-2xl font-semibold mb-3" style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}>
+        <h2 className="text-2xl font-semibold mb-3" style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}>
           Have a Question We Haven&apos;t Answered?
         </h2>
         <p className="text-sm text-gray-500 mb-6" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}>Our team is happy to help. Reach out anytime.</p>

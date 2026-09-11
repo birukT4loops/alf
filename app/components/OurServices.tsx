@@ -138,11 +138,11 @@ export default function OurServices() {
             <li
               key={s.label}
               className="flex items-center gap-4 py-4 border-b"
-              style={{ borderColor: "rgba(20,67,44,0.12)" }}
+              style={{ borderColor: "rgba(95,150,36,0.2)" }}
             >
               <span
                 className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: "var(--forest)", color: "var(--gold-light)" }}
+                style={{ backgroundColor: "var(--brand-green)", color: "#ffffff" }}
               >
                 <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   {s.path}

@@ -34,11 +34,11 @@ export default function WhyFamiliesChooseUs() {
             className="rounded-b-lg px-8 py-8 text-center -mt-1"
             style={{ backgroundColor: "var(--forest)" }}
           >
-            <p className="serif-italic text-2xl md:text-3xl" style={{ color: "var(--gold-light)" }}>
+            <p className="serif-italic text-2xl md:text-3xl" style={{ color: "#ffffff" }}>
               Our Mission
             </p>
             <p
-              className="text-white/85 text-sm md:text-base leading-relaxed mt-4"
+              className="text-white text-sm md:text-base leading-relaxed mt-4"
               style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}
             >
               To provide compassionate, personalized care in a loving home environment

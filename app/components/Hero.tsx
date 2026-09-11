@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "./Logo";
 import Ornament from "./Ornament";
 import { IMAGES } from "../lib/images";
 
@@ -54,59 +55,38 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(13,47,30,0.92) 0%, rgba(20,67,44,0.82) 45%, rgba(13,47,30,0.94) 100%)",
+              "linear-gradient(180deg, rgba(95,150,36,0.9) 0%, rgba(95,150,36,0.8) 45%, rgba(95,150,36,0.92) 100%)",
           }}
         />
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 py-20 md:py-28 text-center flex flex-col items-center">
-          {/* Logo lockup */}
-          <Image
-            src="/LOGOmain.png"
-            alt=""
-            width={200}
-            height={133}
-            preload
-            className="object-contain"
-            style={{ width: "clamp(140px, 22vw, 200px)", height: "auto" }}
-          />
+          {/* The navy/green logo needs a light ground, so it sits on a cream plate */}
+          <div
+            className="rounded-2xl px-7 py-5 md:px-9 md:py-6 shadow-2xl"
+            style={{ backgroundColor: "var(--cream)", border: "1px solid rgba(211,166,58,0.45)" }}
+          >
+            <Logo href={null} className="h-24 md:h-32 w-auto" sizes="200px" eager />
+          </div>
+
+          <Ornament color="#ffffff" className="my-8" />
+
           <h1
-            className="display-caps text-white text-5xl md:text-6xl lg:text-7xl mt-4"
-            style={{ letterSpacing: "0.06em" }}
-          >
-            Oakridge
-          </h1>
-          <p
-            className="display-caps text-2xl md:text-3xl mt-1"
-            style={{ color: "var(--gold-light)", letterSpacing: "0.24em" }}
-          >
-            Manor Living
-          </p>
-          <p
-            className="text-[10px] md:text-[11px] uppercase tracking-[0.42em] text-white/70 mt-3"
-            style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}
-          >
-            Residential Assisted Living
-          </p>
-
-          <Ornament color="var(--gold-light)" className="my-8" />
-
-          <h2
             className="text-3xl md:text-4xl lg:text-5xl font-normal text-white leading-tight"
             style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
           >
             Compassionate Care.
             <br />
             Comfortable Living.
-          </h2>
+          </h1>
           <p
             className="serif-italic text-4xl md:text-5xl lg:text-6xl mt-3 leading-tight"
-            style={{ color: "var(--gold-light)" }}
+            style={{ color: "#ffffff" }}
           >
             A Place to Call Home.
           </p>
 
           <p
-            className="text-white/80 text-base md:text-lg leading-relaxed mt-8 max-w-xl"
+            className="text-white text-base md:text-lg leading-relaxed mt-8 max-w-xl"
             style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}
           >
             A boutique residential assisted living home where every resident is
@@ -123,11 +103,11 @@ export default function Hero() {
               </svg>
               Schedule Your Personal Tour
             </Link>
-            <a href="tel:+19725550123" className="btn-outline-light justify-center">
+            <a href="tel:+19724800270" className="btn-outline-light justify-center">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
               </svg>
-              (972) 555-0123
+              (972) 480-0270
             </a>
           </div>
         </div>
@@ -142,9 +122,9 @@ export default function Hero() {
               className={`flex flex-col items-center text-center px-4 ${
                 i > 0 ? "sm:border-l" : ""
               }`}
-              style={{ borderColor: "rgba(215,170,60,0.25)" }}
+              style={{ borderColor: "rgba(255,255,255,0.3)" }}
             >
-              <span style={{ color: "var(--gold-light)" }}>{p.icon}</span>
+              <span style={{ color: "#ffffff" }}>{p.icon}</span>
               <p
                 className="text-[11px] md:text-xs uppercase tracking-[0.18em] font-bold text-white mt-4 leading-relaxed max-w-[190px]"
                 style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}

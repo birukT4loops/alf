@@ -61,7 +61,7 @@ export default function FloorPlansPage() {
           <p className="section-badge mb-4">Our Residences</p>
           <h2
             className="text-3xl md:text-4xl font-semibold mb-6"
-            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
           >
             Beautifully Appointed Homes
           </h2>
@@ -137,7 +137,7 @@ export default function FloorPlansPage() {
         <div className="max-w-5xl mx-auto">
           <h2
             className="text-3xl font-semibold text-center mb-10"
-            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
           >
             What&apos;s Included with Every Residence
           </h2>
@@ -166,7 +166,7 @@ export default function FloorPlansPage() {
         <h2 className="text-3xl font-semibold text-white mb-4" style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}>
           Ready to See a Residence?
         </h2>
-        <p className="text-white/70 mb-8 max-w-xl mx-auto text-sm" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}>
+        <p className="text-white mb-8 max-w-xl mx-auto text-sm" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}>
           Schedule an in-person tour and walk through one of our available floor plans with a member of our team.
         </p>
         <Link href="/contact" className="btn-gold">Schedule a Tour</Link>

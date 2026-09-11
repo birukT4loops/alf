@@ -72,7 +72,7 @@ export default function LivingOptionsPage() {
           <p className="section-badge mb-4">Find Your Fit</p>
           <h2
             className="text-3xl md:text-4xl font-semibold mb-6"
-            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
           >
             The Right Level of Care for Every Stage
           </h2>
@@ -140,7 +140,7 @@ export default function LivingOptionsPage() {
           Not Sure Which Option Is Right?
         </h2>
         <p
-          className="text-white/70 mb-8 max-w-xl mx-auto text-sm leading-relaxed"
+          className="text-white mb-8 max-w-xl mx-auto text-sm leading-relaxed"
           style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}
         >
           Our care advisors are happy to walk you through every option and help find the best fit

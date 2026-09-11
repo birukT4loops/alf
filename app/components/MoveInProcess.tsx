@@ -67,7 +67,7 @@ export default function MoveInProcess() {
               <span className="relative">
                 <span
                   className="w-16 h-16 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "var(--forest)", color: "var(--gold-light)" }}
+                  style={{ backgroundColor: "var(--brand-green)", color: "#ffffff" }}
                 >
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
                     {s.icon}
@@ -86,7 +86,7 @@ export default function MoveInProcess() {
               </span>
               <h3
                 className="text-[11px] font-bold uppercase tracking-[0.16em] mt-5 leading-relaxed"
-                style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--forest)" }}
+                style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}
               >
                 {s.title}
               </h3>

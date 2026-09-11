@@ -24,7 +24,7 @@ export default function GalleryPage() {
           <p className="section-badge mb-4">A Look Inside</p>
           <h2
             className="text-3xl md:text-4xl font-semibold mb-4"
-            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
           >
             See Oakridge Manor Living for Yourself
           </h2>
@@ -55,7 +55,7 @@ export default function GalleryPage() {
                   </div>
                 </div>
               </div>
-              <div className="absolute top-3 left-3 px-2 py-1 text-[10px] uppercase tracking-widest font-semibold text-white" style={{ backgroundColor: "rgba(27,42,74,0.85)" }}>
+              <div className="absolute top-3 left-3 px-2 py-1 text-[10px] uppercase tracking-widest font-semibold text-white" style={{ backgroundColor: "rgba(95,150,36,0.85)" }}>
                 {photo.category}
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function GalleryPage() {
         <h2 className="text-3xl font-semibold text-white mb-4" style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}>
           The Best View Is In Person
         </h2>
-        <p className="text-white/70 mb-8 max-w-xl mx-auto text-sm" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}>
+        <p className="text-white mb-8 max-w-xl mx-auto text-sm" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}>
           Photos only tell part of the story. Come see the warmth, the people, and the lifestyle that
           make Oakridge Manor Living truly exceptional.
         </p>

@@ -33,7 +33,7 @@ export default function AboutPage() {
           <p className="section-badge mb-5">Welcome</p>
           <h2
             className="text-4xl md:text-5xl font-semibold leading-tight mb-8"
-            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
           >
             Welcome to Oakridge Manor Living
           </h2>
@@ -74,7 +74,7 @@ export default function AboutPage() {
             <p className="section-badge mb-4">Our Mission</p>
             <h2
               className="text-3xl md:text-4xl font-semibold mb-5"
-              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
             >
               Caring with Compassion. Living with Dignity.
             </h2>
@@ -98,7 +98,7 @@ export default function AboutPage() {
             <p className="section-badge mb-4">Our Promise</p>
             <h2
               className="text-4xl font-semibold"
-              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
             >
               Why Choose Oakridge Manor Living
             </h2>
@@ -135,7 +135,7 @@ export default function AboutPage() {
             <p className="section-badge mb-4">Resident Lifestyle</p>
             <h2
               className="text-3xl md:text-4xl font-semibold mb-5"
-              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
             >
               Live Independently with Confidence
             </h2>
@@ -170,7 +170,7 @@ export default function AboutPage() {
           <p className="section-badge mb-5">Family Support</p>
           <h2
             className="text-3xl md:text-4xl font-semibold mb-6"
-            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+            style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
           >
             Peace of Mind for Families
           </h2>
@@ -196,7 +196,7 @@ export default function AboutPage() {
             <p className="section-badge mb-4">Testimonials</p>
             <h2
               className="text-3xl md:text-4xl font-semibold"
-              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
             >
               What Families Are Saying
             </h2>
@@ -236,7 +236,7 @@ export default function AboutPage() {
           Experience the Oakridge Manor Living Difference
         </h2>
         <p
-          className="text-white/70 text-base max-w-xl mx-auto mb-8 leading-relaxed"
+          className="text-white text-base max-w-xl mx-auto mb-8 leading-relaxed"
           style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}
         >
           Whether you&apos;re exploring options for yourself or someone you love, we&apos;re here to answer your questions and help you make an informed decision.

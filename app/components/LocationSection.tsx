@@ -3,8 +3,8 @@ import SectionHeading from "./SectionHeading";
 
 const contacts = [
   {
-    label: "(972) 555-0123",
-    href: "tel:+19725550123",
+    label: "(972) 480-0270",
+    href: "tel:+19724800270",
     icon: (
       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
     ),
@@ -57,7 +57,7 @@ export default function LocationSection() {
                   <>
                     <span
                       className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: "var(--gold)", color: "#fff" }}
+                      style={{ backgroundColor: "#ffffff", color: "var(--brand-green)" }}
                     >
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                         {c.icon}
@@ -77,7 +77,7 @@ export default function LocationSection() {
                     {c.href ? (
                       <a
                         href={c.href}
-                        className="flex items-center gap-4 text-white hover:text-gold-light transition-colors"
+                        className="flex items-center gap-4 text-white hover:opacity-80 transition-opacity"
                       >
                         {inner}
                       </a>
@@ -90,7 +90,7 @@ export default function LocationSection() {
             </ul>
 
             <address
-              className="not-italic text-white/65 text-sm leading-relaxed mt-8 pl-15"
+              className="not-italic text-white text-sm leading-relaxed mt-8 pl-15"
               style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}
             >
               2421 London Dr, Plano, TX 75025
@@ -106,7 +106,7 @@ export default function LocationSection() {
           {/* Map */}
           <div
             className="overflow-hidden rounded-lg shadow-2xl"
-            style={{ height: "420px", border: "3px solid var(--gold)" }}
+            style={{ height: "420px", border: "3px solid #ffffff" }}
           >
             <iframe
               title="Oakridge Manor Living location map"

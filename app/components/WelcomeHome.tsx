@@ -29,7 +29,7 @@ export default function WelcomeHome() {
 
         <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ height: "440px" }}>
           <Image
-            src={IMAGES.livingRoom}
+            src={IMAGES.welcomeLiving}
             alt="Living room with fireplace and comfortable seating at Oakridge Manor Living"
             fill
             className="object-cover"

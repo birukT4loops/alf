@@ -32,7 +32,7 @@ export default function ContactPage() {
             <p className="section-badge mb-4">Get In Touch</p>
             <h2
               className="text-3xl font-semibold mb-3"
-              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
             >
               Schedule a Tour or Ask a Question
             </h2>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {[["firstName", "First Name", "text", true], ["lastName", "Last Name", "text", true]].map(([name, label, type, req]) => (
                     <div key={String(name)} className="flex flex-col gap-1.5">
-                      <label htmlFor={String(name)} className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--navy)" }}>
+                      <label htmlFor={String(name)} className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>
                         {String(label)} {req && "*"}
                       </label>
                       <input
@@ -74,17 +74,17 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="email" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--navy)" }}>Email Address *</label>
+                  <label htmlFor="email" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>Email Address *</label>
                   <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} className="border px-4 py-3 text-sm outline-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="phone" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--navy)" }}>Phone Number</label>
+                    <label htmlFor="phone" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>Phone Number</label>
                     <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange} className="border px-4 py-3 text-sm outline-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="relationship" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--navy)" }}>I Am A…</label>
+                    <label htmlFor="relationship" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>I Am A…</label>
                     <select id="relationship" name="relationship" value={form.relationship} onChange={handleChange} className="border px-4 py-3 text-sm outline-none bg-white" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>
                       <option value="">Select…</option>
                       <option>Prospective Resident</option>
@@ -96,12 +96,12 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="tourDate" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--navy)" }}>Preferred Tour Date</label>
+                  <label htmlFor="tourDate" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>Preferred Tour Date</label>
                   <input id="tourDate" name="tourDate" type="date" value={form.tourDate} onChange={handleChange} className="border px-4 py-3 text-sm outline-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="message" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--navy)" }}>Message</label>
+                  <label htmlFor="message" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>Message</label>
                   <textarea id="message" name="message" rows={4} value={form.message} onChange={handleChange} className="border px-4 py-3 text-sm outline-none resize-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} placeholder="Tell us about your needs or any questions you have…" />
                 </div>
 
@@ -119,7 +119,7 @@ export default function ContactPage() {
             <div className="flex flex-col gap-6">
               {[
                 { label: "Address", value: "2421 London Dr\nPlano, TX 75025", icon: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z M12 10m-3 0a3 3 0 106 0 3 3 0 00-6 0" },
-                { label: "Phone", value: "(972) 555-0123", icon: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" },
+                { label: "Phone", value: "(972) 480-0270", icon: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" },
                 { label: "Email", value: "info@oakridgemanorliving.com", icon: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6" },
                 { label: "Office Hours", value: "Monday – Friday: 8am – 6pm\nSaturday – Sunday: 9am – 4pm", icon: "M12 2a10 10 0 100 20A10 10 0 0012 2z M12 6v6l4 2" },
               ].map((info) => (
@@ -130,7 +130,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--navy)" }}>{info.label}</p>
+                    <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>{info.label}</p>
                     <p className="text-sm leading-relaxed whitespace-pre-line" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-medium)" }}>{info.value}</p>
                   </div>
                 </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
             <p className="section-badge mb-4">FAQ</p>
             <h2
               className="text-3xl font-semibold"
-              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}
+              style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--brand-green)" }}
             >
               Frequently Asked Questions
             </h2>

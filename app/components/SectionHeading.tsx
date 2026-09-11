@@ -19,20 +19,20 @@ export default function SectionHeading({
     <div className={centered ? "text-center" : "text-left"}>
       <h2
         className="display-caps text-3xl md:text-4xl lg:text-[2.75rem]"
-        style={{ color: onDark ? "#ffffff" : "var(--forest)" }}
+        style={{ color: onDark ? "#ffffff" : "var(--brand-green)" }}
       >
         {title}
       </h2>
       {subtitle && (
         <p
           className="serif-italic text-xl md:text-2xl mt-2"
-          style={{ color: onDark ? "var(--gold-light)" : "var(--gold-deep)" }}
+          style={{ color: onDark ? "#ffffff" : "var(--gold-deep)" }}
         >
           {subtitle}
         </p>
       )}
       <Ornament
-        color={onDark ? "var(--gold-light)" : "var(--gold)"}
+        color={onDark ? "#ffffff" : "var(--gold)"}
         className={`mt-5 ${centered ? "" : "justify-start"}`}
       />
     </div>

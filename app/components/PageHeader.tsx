@@ -22,7 +22,7 @@ export default function PageHeader({ title, subtitle, image = "houseExterior" }:
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(27,42,74,0.6) 0%, rgba(27,42,74,0.75) 100%)",
+            "linear-gradient(to bottom, rgba(95,150,36,0.6) 0%, rgba(95,150,36,0.75) 100%)",
         }}
       />
       <div className="relative z-10 flex flex-col items-center justify-center h-full py-20 px-6 text-center">

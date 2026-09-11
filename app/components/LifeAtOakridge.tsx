@@ -144,7 +144,7 @@ export default function LifeAtOakridge() {
             <li
               key={a.label}
               className="flex items-center gap-4 py-3.5 border-b"
-              style={{ borderColor: "rgba(20,67,44,0.12)" }}
+              style={{ borderColor: "rgba(95,150,36,0.2)" }}
             >
               <span className="flex-shrink-0" style={{ color: "var(--gold-deep)" }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">

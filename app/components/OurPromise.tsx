@@ -45,7 +45,7 @@ export default function OurPromise() {
       <div className="max-w-5xl mx-auto">
         <p
           className="serif-italic text-2xl md:text-3xl text-center mb-10"
-          style={{ color: "var(--gold-light)" }}
+          style={{ color: "#ffffff" }}
         >
           Our Promise
         </p>
@@ -54,9 +54,9 @@ export default function OurPromise() {
             <div
               key={p.title}
               className={`flex flex-col items-center text-center px-3 ${i > 0 ? "lg:border-l" : ""}`}
-              style={{ borderColor: "rgba(215,170,60,0.25)" }}
+              style={{ borderColor: "rgba(255,255,255,0.3)" }}
             >
-              <span style={{ color: "var(--gold-light)" }}>{p.icon}</span>
+              <span style={{ color: "#ffffff" }}>{p.icon}</span>
               <h3
                 className="text-[11px] md:text-xs font-bold uppercase tracking-[0.18em] text-white mt-4 leading-relaxed"
                 style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}
