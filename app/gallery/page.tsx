@@ -4,14 +4,15 @@ import PageHeader from "../components/PageHeader";
 import { IMAGES } from "../lib/images";
 
 const photos = [
-  { src: IMAGES.houseExterior, alt: "Oakridge Manor Living exterior at sunset", category: "Exterior", caption: "Our beautiful home at dusk" },
-  { src: IMAGES.houseEntrance, alt: "Grand entrance with arched doorway", category: "Front Entrance", caption: "The welcoming front entrance" },
-  { src: IMAGES.commonArea, alt: "Spacious common living area with fireplace and built-in shelving", category: "Common Area", caption: "Bright, open common area with fireplace & built-ins" },
-  { src: IMAGES.diningRoom, alt: "Formal dining room", category: "Dining Room", caption: "Elegant formal dining room" },
-  { src: IMAGES.breakfastNook, alt: "Bright breakfast nook", category: "Kitchen & Dining", caption: "Bright, casual dining nook" },
-  { src: IMAGES.livingRoom, alt: "Cozy living room with fireplace", category: "Living Room", caption: "Cozy living room with warm fireplace" },
-  { src: IMAGES.bedroom, alt: "Private resident bedroom", category: "Private Room", caption: "Spacious private resident room" },
-  { src: IMAGES.houseExterior, alt: "Lush landscaping and lawn", category: "Grounds", caption: "Meticulously maintained grounds" },
+  { src: IMAGES.livingRoom, alt: "Living room with fireplace, built-in shelving and a view to the entry", category: "Living Room", caption: "The living room, with fireplace and built-ins" },
+  { src: IMAGES.patio, alt: "Covered backyard patio under string lights at dusk", category: "Outdoors", caption: "The covered patio, strung with lights" },
+  { src: IMAGES.privateRoom, alt: "Furnished private bedroom with a queen bed and reading chair", category: "Private Room", caption: "A furnished private bedroom" },
+  { src: IMAGES.careRoom, alt: "Resident room with an adjustable care bed beside a sunny window", category: "Care Room", caption: "A care room with an adjustable bed" },
+  { src: IMAGES.diningRoom, alt: "Dining room set for a meal, with butler's pantry alongside", category: "Dining Room", caption: "Where residents share home-cooked meals" },
+  { src: IMAGES.kitchen, alt: "Kitchen with granite counters and breakfast bar seating", category: "Kitchen", caption: "The kitchen and breakfast bar" },
+  { src: IMAGES.bathroom, alt: "Accessible bathroom with roll-in shower, grab bars and shower chair", category: "Accessible Bath", caption: "Roll-in shower, grab bars and shower seating" },
+  { src: IMAGES.office, alt: "Office with seating where families meet the care team", category: "Our Office", caption: "Where families meet the care team" },
+  { src: IMAGES.laundry, alt: "Laundry room with washer, dryer and utility sink", category: "Laundry", caption: "On-site laundry for daily housekeeping" },
 ];
 
 export default function GalleryPage() {
@@ -39,8 +40,8 @@ export default function GalleryPage() {
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {photos.map((photo, i) => (
-            <div key={i} className="group overflow-hidden relative bg-gray-100">
-              <div className="relative" style={{ height: "300px" }}>
+            <figure key={i} className="group relative overflow-hidden rounded-2xl ring-1 ring-black/5 shadow-sm bg-gray-100">
+              <div className="relative aspect-[4/3]">
                 <Image
                   src={photo.src}
                   alt={photo.alt}
@@ -48,17 +49,17 @@ export default function GalleryPage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/75 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
                   <div className="text-white text-sm font-semibold" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}>
                     {photo.caption}
                   </div>
                 </div>
               </div>
-              <div className="absolute top-3 left-3 px-2 py-1 text-[10px] uppercase tracking-widest font-semibold text-white" style={{ backgroundColor: "rgba(95,150,36,0.85)" }}>
+              <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] uppercase tracking-widest font-semibold text-white backdrop-blur-sm" style={{ backgroundColor: "rgba(95,150,36,0.9)" }}>
                 {photo.category}
               </div>
-            </div>
+            </figure>
           ))}
         </div>
       </section>

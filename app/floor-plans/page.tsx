@@ -8,7 +8,7 @@ const plans = [
     type: "Studio",
     sqft: "Up to 550 sq ft",
     price: "Starting at $3,800/mo",
-    image: IMAGES.breakfastNook,
+    image: IMAGES.privateRoom,
     features: [
       "Open-concept living area",
       "Full private bathroom",
@@ -23,7 +23,7 @@ const plans = [
     type: "One Bedroom",
     sqft: "Up to 850 sq ft",
     price: "Starting at $4,600/mo",
-    image: IMAGES.diningRoom,
+    image: IMAGES.careRoom,
     features: [
       "Separate bedroom & living room",
       "Full private bathroom",

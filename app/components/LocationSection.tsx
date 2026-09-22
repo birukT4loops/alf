@@ -105,7 +105,7 @@ export default function LocationSection() {
 
           {/* Map */}
           <div
-            className="overflow-hidden rounded-lg shadow-2xl"
+            className="overflow-hidden rounded-2xl shadow-2xl"
             style={{ height: "420px", border: "3px solid #ffffff" }}
           >
             <iframe

@@ -44,8 +44,8 @@ export default function Hero() {
       {/* Cover panel */}
       <div className="relative w-full overflow-hidden" style={{ backgroundColor: "var(--forest)" }}>
         <Image
-          src={IMAGES.houseExterior}
-          alt="The Oakridge Manor Living residence at dusk"
+          src={IMAGES.patio}
+          alt="The covered backyard patio at Oakridge Manor Living, lit with string lights at dusk"
           fill
           preload
           className="object-cover"

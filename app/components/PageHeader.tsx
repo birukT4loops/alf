@@ -7,7 +7,7 @@ interface PageHeaderProps {
   image?: keyof typeof IMAGES;
 }
 
-export default function PageHeader({ title, subtitle, image = "houseExterior" }: PageHeaderProps) {
+export default function PageHeader({ title, subtitle, image = "livingRoom" }: PageHeaderProps) {
   return (
     <section className="relative w-full" style={{ minHeight: "320px" }}>
       <Image

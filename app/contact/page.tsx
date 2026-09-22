@@ -112,8 +112,8 @@ export default function ContactPage() {
 
           {/* Contact info */}
           <div className="flex flex-col gap-10">
-            <div className="relative rounded overflow-hidden" style={{ height: "280px" }}>
-              <Image src={IMAGES.houseEntrance} alt="Oakridge Manor Living entrance" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+            <div className="relative rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-lg" style={{ height: "280px" }}>
+              <Image src={IMAGES.office} alt="The office at Oakridge Manor Living" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
             </div>
 
             <div className="flex flex-col gap-6">

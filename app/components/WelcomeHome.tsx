@@ -27,9 +27,9 @@ export default function WelcomeHome() {
           </p>
         </div>
 
-        <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ height: "440px" }}>
+        <div className="relative rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-xl" style={{ height: "440px" }}>
           <Image
-            src={IMAGES.welcomeLiving}
+            src={IMAGES.livingRoom}
             alt="Living room with fireplace and comfortable seating at Oakridge Manor Living"
             fill
             className="object-cover"

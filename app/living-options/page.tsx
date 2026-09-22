@@ -30,7 +30,7 @@ const options = [
       "Sensory & music therapy",
       "Safe outdoor walking paths",
     ],
-    image: IMAGES.houseEntrance,
+    image: IMAGES.patio,
   },
   {
     title: "Independent Living",
@@ -44,7 +44,7 @@ const options = [
       "Concierge services",
       "Pet-friendly residences",
     ],
-    image: IMAGES.diningRoom,
+    image: IMAGES.privateRoom,
   },
   {
     title: "Respite Care",
@@ -58,7 +58,7 @@ const options = [
       "Furnished suites available",
       "Seamless transition support",
     ],
-    image: IMAGES.breakfastNook,
+    image: IMAGES.careRoom,
   },
 ];
 

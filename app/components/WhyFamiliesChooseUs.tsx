@@ -20,10 +20,10 @@ export default function WhyFamiliesChooseUs() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         {/* Photo + mission block */}
         <div>
-          <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ height: "340px" }}>
+          <div className="relative rounded-t-2xl overflow-hidden ring-1 ring-black/5 shadow-xl" style={{ height: "340px" }}>
             <Image
-              src={IMAGES.commonArea}
-              alt="A caregiver sharing a laugh with a resident over coffee"
+              src={IMAGES.office}
+              alt="The office at Oakridge Manor Living, where families meet the care team"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -31,7 +31,7 @@ export default function WhyFamiliesChooseUs() {
           </div>
 
           <div
-            className="rounded-b-lg px-8 py-8 text-center -mt-1"
+            className="rounded-b-2xl px-8 py-8 text-center -mt-1"
             style={{ backgroundColor: "var(--forest)" }}
           >
             <p className="serif-italic text-2xl md:text-3xl" style={{ color: "#ffffff" }}>

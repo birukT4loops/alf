@@ -24,7 +24,7 @@ export default function AboutPage() {
       <PageHeader
         title="About Oakridge Manor Living"
         subtitle="Compassionate Care. Comfortable Living."
-        image="houseExterior"
+        image="patio"
       />
 
       {/* Welcome */}
@@ -61,10 +61,10 @@ export default function AboutPage() {
       {/* Mission */}
       <section className="py-20 px-6" style={{ backgroundColor: "var(--off-white)" }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative rounded overflow-hidden" style={{ height: "400px" }}>
+          <div className="relative rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-lg" style={{ height: "400px" }}>
             <Image
-              src={IMAGES.commonArea}
-              alt="Comfortable common area at Oakridge Manor Living"
+              src={IMAGES.livingRoom}
+              alt="The living room at Oakridge Manor Living, with fireplace and built-in shelving"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -152,10 +152,10 @@ export default function AboutPage() {
               Whether participating in community activities, relaxing with friends, enjoying hobbies, or spending time with family, our residents experience a lifestyle built around comfort, connection, and well-being.
             </p>
           </div>
-          <div className="relative rounded overflow-hidden" style={{ height: "400px" }}>
+          <div className="relative rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-lg" style={{ height: "400px" }}>
             <Image
-              src={IMAGES.livingRoom}
-              alt="Living room at Oakridge Manor"
+              src={IMAGES.careRoom}
+              alt="A resident care room at Oakridge Manor Living"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"

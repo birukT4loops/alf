@@ -7,7 +7,7 @@ const services = [
   {
     title: "Personal Care Assistance",
     subtitle: "Personalized Support for Everyday Living",
-    image: IMAGES.houseEntrance,
+    image: IMAGES.bathroom,
     intro: "Our goal is to help residents remain as independent as possible while providing the right level of assistance for daily life.",
     items: [
       "Bathing",
@@ -23,7 +23,7 @@ const services = [
   {
     title: "Housekeeping & Laundry",
     subtitle: "Maintenance-Free Living",
-    image: IMAGES.bedroom,
+    image: IMAGES.laundry,
     intro: "Residents can enjoy a maintenance-free lifestyle with professional housekeeping and laundry services.",
     items: [
       "Housekeeping services",
@@ -47,7 +47,7 @@ const services = [
   {
     title: "Health & Wellness",
     subtitle: "Focused on Well-Being",
-    image: IMAGES.livingRoom,
+    image: IMAGES.careRoom,
     intro: "Our wellness-focused approach keeps residents healthy, active, and engaged.",
     items: [
       "Medication management",
@@ -60,7 +60,7 @@ const services = [
   {
     title: "Social & Recreational Activities",
     subtitle: "Stay Active & Connected",
-    image: IMAGES.breakfastNook,
+    image: IMAGES.patio,
     intro: "Every day offers opportunities for fun and connection through a vibrant activities calendar.",
     items: [
       "Exercise classes",
@@ -121,7 +121,7 @@ export default function ServicesPage() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start"
             >
               <div
-                className={`relative rounded overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}
+                className={`relative rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-lg ${i % 2 === 1 ? "lg:order-2" : ""}`}
                 style={{ minHeight: "360px" }}
               >
                 <Image
