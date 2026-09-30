@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
+import { PHONE_PRIMARY, PHONE_SECONDARY } from "../lib/contact";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -33,16 +34,21 @@ export default function Navbar() {
         >
           Serving Allen &middot; Plano &middot; McKinney &middot; Frisco &middot; North Dallas
         </p>
-        <a
-          href="tel:+19724800270"
-          className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity"
+        <div
+          className="flex items-center gap-2 sm:gap-3"
           style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif" }}
         >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
           </svg>
-          <span className="text-sm font-semibold tracking-wide">(972) 480-0270</span>
-        </a>
+          <a href={PHONE_PRIMARY.href} className="text-white hover:opacity-80 transition-opacity text-sm font-semibold tracking-wide">
+            {PHONE_PRIMARY.label}
+          </a>
+          <span aria-hidden="true" className="w-px h-3.5" style={{ backgroundColor: "rgba(255,255,255,0.45)" }} />
+          <a href={PHONE_SECONDARY.href} className="text-white/85 hover:opacity-80 transition-opacity text-sm tracking-wide">
+            {PHONE_SECONDARY.label}
+          </a>
+        </div>
       </div>
 
       {/* Main nav */}

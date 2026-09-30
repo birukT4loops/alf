@@ -16,12 +16,12 @@ const amenities = [
 ];
 
 const shots = [
-  { src: IMAGES.patio, alt: "The covered backyard patio under string lights", label: "Covered Patio", cell: "lg:col-span-2" },
-  { src: IMAGES.privateRoom, alt: "A fully furnished private bedroom with warm bedside lighting", label: "Private Bedroom", cell: "lg:row-span-2" },
+  { src: IMAGES.patio, alt: "The covered patio, set for dining under string lights", label: "Covered Patio", cell: "col-span-2" },
+  { src: IMAGES.privateRoom, alt: "A fully furnished private bedroom with warm bedside lighting", label: "Private Bedroom", cell: "" },
   { src: IMAGES.kitchen, alt: "The kitchen where home-cooked meals are prepared", label: "Kitchen", cell: "" },
   { src: IMAGES.diningRoom, alt: "The dining room set for a home-cooked meal", label: "Dining Room", cell: "" },
   { src: IMAGES.bathroom, alt: "An accessible bathroom with roll-in shower and grab bars", label: "Accessible Bath", cell: "" },
-  { src: IMAGES.laundry, alt: "The laundry room used for daily housekeeping", label: "Laundry", cell: "" },
+  { src: IMAGES.livingRoom, alt: "The living room, with fireplace and built-in shelving", label: "Living Room", cell: "col-span-2" },
 ];
 
 export default function ComfortableAmenities() {
@@ -48,7 +48,7 @@ export default function ComfortableAmenities() {
         </ul>
 
         {/* Bento grid — the portrait bedroom shot gets a tall cell so it isn't cropped */}
-        <div className="mt-14 grid grid-cols-2 auto-rows-[160px] gap-3 sm:gap-4 lg:grid-cols-4 lg:auto-rows-[215px] lg:grid-flow-row-dense">
+        <div className="mt-14 grid grid-cols-2 auto-rows-[160px] gap-3 sm:gap-4 lg:grid-cols-4 lg:auto-rows-[215px]">
           {shots.map((s) => (
             <figure
               key={s.label}

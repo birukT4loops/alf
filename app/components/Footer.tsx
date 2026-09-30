@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import Ornament from "./Ornament";
+import { PHONE_PRIMARY, PHONE_SECONDARY } from "../lib/contact";
 
 export default function Footer() {
   return (
@@ -26,8 +27,11 @@ export default function Footer() {
             <h3 className="text-[11px] uppercase tracking-[0.2em] font-bold mb-4" style={{ color: "#ffffff" }}>
               Get in Touch
             </h3>
-            <a href="tel:+19724800270" className="block text-white hover:opacity-80 text-sm transition-colors">
-              (972) 480-0270
+            <a href={PHONE_PRIMARY.href} className="block text-white hover:opacity-80 text-sm font-semibold transition-colors">
+              {PHONE_PRIMARY.label}
+            </a>
+            <a href={PHONE_SECONDARY.href} className="block text-white/85 hover:opacity-80 text-sm mt-1 transition-colors">
+              {PHONE_SECONDARY.label}
             </a>
             <a
               href="mailto:info@oakridgemanorliving.com"

@@ -23,7 +23,7 @@ const services = [
   {
     title: "Housekeeping & Laundry",
     subtitle: "Maintenance-Free Living",
-    image: IMAGES.laundry,
+    image: IMAGES.privateRoom,
     intro: "Residents can enjoy a maintenance-free lifestyle with professional housekeeping and laundry services.",
     items: [
       "Housekeeping services",

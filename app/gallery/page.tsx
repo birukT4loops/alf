@@ -12,7 +12,7 @@ const photos = [
   { src: IMAGES.kitchen, alt: "Kitchen with granite counters and breakfast bar seating", category: "Kitchen", caption: "The kitchen and breakfast bar" },
   { src: IMAGES.bathroom, alt: "Accessible bathroom with roll-in shower, grab bars and shower chair", category: "Accessible Bath", caption: "Roll-in shower, grab bars and shower seating" },
   { src: IMAGES.office, alt: "Office with seating where families meet the care team", category: "Our Office", caption: "Where families meet the care team" },
-  { src: IMAGES.laundry, alt: "Laundry room with washer, dryer and utility sink", category: "Laundry", caption: "On-site laundry for daily housekeeping" },
+  { src: IMAGES.exterior, alt: "The Oakridge Manor Living home at golden hour", category: "Exterior", caption: "Our home, on a quiet residential street" },
 ];
 
 export default function GalleryPage() {

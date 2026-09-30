@@ -1,25 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState } from "react";
 import Image from "next/image";
 import PageHeader from "../components/PageHeader";
+import { PHONE_PRIMARY, PHONE_SECONDARY, CONTACT_INBOX } from "../lib/contact";
 import { IMAGES } from "../lib/images";
+import { sendContactMessage } from "./actions";
+import { initialContactState } from "./contact-state";
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
-    firstName: "", lastName: "", email: "", phone: "",
-    relationship: "", tourDate: "", message: "",
+  const [state, formAction, pending] = useActionState(sendContactMessage, initialContactState);
+  const errors = state.fieldErrors ?? {};
+  const prior = state.values;
+  const fieldStyle = (name: keyof typeof errors) => ({
+    borderColor: errors[name] ? "#b3261e" : "#ddd",
+    fontFamily: "var(--font-open-sans), Arial, sans-serif",
+    color: "var(--text-dark)",
   });
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setSubmitted(true);
-  }
 
   return (
     <>
@@ -43,20 +40,25 @@ export default function ContactPage() {
               Fill out the form below and a member of our team will reach out within one business day.
             </p>
 
-            {submitted ? (
+            {state.status === "sent" ? (
               <div className="p-8 text-center border" style={{ borderColor: "var(--gold)", backgroundColor: "#fdf9f3" }}>
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-4" style={{ color: "var(--gold)" }}>
                   <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
                 <h3 className="text-2xl font-semibold mb-2" style={{ fontFamily: "var(--font-playfair), Georgia, serif", color: "var(--navy)" }}>
-                  Thank You, {form.firstName}!
+                  Thank You{state.firstName ? `, ${state.firstName}` : ""}!
                 </h3>
                 <p className="text-sm" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-medium)" }}>
                   We&apos;ve received your message and will be in touch within one business day.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <form action={formAction} className="flex flex-col gap-5" noValidate>
+                {/* Honeypot — hidden from people, bots fill it in */}
+                <input
+                  type="text" name="company" tabIndex={-1} autoComplete="off"
+                  aria-hidden="true" className="hidden"
+                />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {[["firstName", "First Name", "text", true], ["lastName", "Last Name", "text", true]].map(([name, label, type, req]) => (
                     <div key={String(name)} className="flex flex-col gap-1.5">
@@ -65,27 +67,32 @@ export default function ContactPage() {
                       </label>
                       <input
                         id={String(name)} name={String(name)} type={String(type)} required={Boolean(req)}
-                        value={form[String(name) as keyof typeof form]} onChange={handleChange}
+                        defaultValue={prior?.[String(name) as "firstName" | "lastName"] ?? ""}
+                        aria-invalid={Boolean(errors[String(name) as keyof typeof errors])}
                         className="border px-4 py-3 text-sm outline-none"
-                        style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}
+                        style={fieldStyle(String(name) as keyof typeof errors)}
                       />
+                      {errors[String(name) as keyof typeof errors] && (
+                        <span className="text-xs" style={{ color: "#b3261e" }}>{errors[String(name) as keyof typeof errors]}</span>
+                      )}
                     </div>
                   ))}
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="email" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>Email Address *</label>
-                  <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} className="border px-4 py-3 text-sm outline-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} />
+                  <input id="email" name="email" type="email" required defaultValue={prior?.email ?? ""} aria-invalid={Boolean(errors.email)} className="border px-4 py-3 text-sm outline-none" style={fieldStyle("email")} />
+                  {errors.email && <span className="text-xs" style={{ color: "#b3261e" }}>{errors.email}</span>}
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="phone" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>Phone Number</label>
-                    <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange} className="border px-4 py-3 text-sm outline-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} />
+                    <input id="phone" name="phone" type="tel" defaultValue={prior?.phone ?? ""} className="border px-4 py-3 text-sm outline-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} />
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="relationship" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>I Am A…</label>
-                    <select id="relationship" name="relationship" value={form.relationship} onChange={handleChange} className="border px-4 py-3 text-sm outline-none bg-white" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>
+                    <select id="relationship" name="relationship" defaultValue={prior?.relationship ?? ""} className="border px-4 py-3 text-sm outline-none bg-white" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>
                       <option value="">Select…</option>
                       <option>Prospective Resident</option>
                       <option>Family Member</option>
@@ -97,15 +104,30 @@ export default function ContactPage() {
 
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="tourDate" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>Preferred Tour Date</label>
-                  <input id="tourDate" name="tourDate" type="date" value={form.tourDate} onChange={handleChange} className="border px-4 py-3 text-sm outline-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} />
+                  <input id="tourDate" name="tourDate" type="date" defaultValue={prior?.tourDate ?? ""} className="border px-4 py-3 text-sm outline-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="message" className="text-xs font-semibold uppercase tracking-widest" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}>Message</label>
-                  <textarea id="message" name="message" rows={4} value={form.message} onChange={handleChange} className="border px-4 py-3 text-sm outline-none resize-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} placeholder="Tell us about your needs or any questions you have…" />
+                  <textarea id="message" name="message" rows={4} defaultValue={prior?.message ?? ""} className="border px-4 py-3 text-sm outline-none resize-none" style={{ borderColor: "#ddd", fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }} placeholder="Tell us about your needs or any questions you have…" />
                 </div>
 
-                <button type="submit" className="btn-primary self-start">Send Message</button>
+                {state.status === "error" && !state.fieldErrors && (
+                  <p
+                    role="alert"
+                    className="text-sm px-4 py-3 border"
+                    style={{ borderColor: "#b3261e", backgroundColor: "#fdf4f3", color: "#b3261e", fontFamily: "var(--font-open-sans), Arial, sans-serif" }}
+                  >
+                    {state.message}
+                  </p>
+                )}
+
+                <button type="submit" disabled={pending} className="btn-primary self-start" style={{ opacity: pending ? 0.7 : 1 }}>
+                  {pending ? "Sending…" : "Send Message"}
+                </button>
+                <p className="text-xs" style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-light)" }}>
+                  Your message goes straight to {CONTACT_INBOX}.
+                </p>
               </form>
             )}
           </div>
@@ -119,7 +141,7 @@ export default function ContactPage() {
             <div className="flex flex-col gap-6">
               {[
                 { label: "Address", value: "2421 London Dr\nPlano, TX 75025", icon: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z M12 10m-3 0a3 3 0 106 0 3 3 0 00-6 0" },
-                { label: "Phone", value: "(972) 480-0270", icon: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" },
+                { label: "Phone", value: `${PHONE_PRIMARY.label}\n${PHONE_SECONDARY.label}`, icon: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" },
                 { label: "Email", value: "info@oakridgemanorliving.com", icon: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6" },
                 { label: "Office Hours", value: "Monday – Friday: 8am – 6pm\nSaturday – Sunday: 9am – 4pm", icon: "M12 2a10 10 0 100 20A10 10 0 0012 2z M12 6v6l4 2" },
               ].map((info) => (

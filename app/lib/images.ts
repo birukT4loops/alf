@@ -1,12 +1,12 @@
 // Photos of the actual Oakridge Manor Living home.
 export const IMAGES = {
-  livingRoom: "/new1.jpeg",   // living room: fireplace, built-ins, entry beyond
-  privateRoom: "/new2.jpeg",  // furnished private bedroom (portrait)
-  careRoom: "/new3.jpeg",     // companion/care room with an adjustable bed
-  diningRoom: "/new4.jpeg",   // dining room and butler's pantry
-  office: "/new5.jpeg",       // office where families meet the team
-  kitchen: "/new6.jpeg",      // kitchen, with the laundry beyond
-  bathroom: "/new7.jpeg",     // accessible bath: roll-in shower, grab bars
-  laundry: "/new8.jpeg",      // laundry room
-  patio: "/new9.jpeg",        // covered backyard patio under string lights
+  exterior: "/np4.jpeg",      // the home at golden hour, with the Oakridge sign
+  livingRoom: "/np3.jpeg",    // living room: fireplace, built-ins, entry beyond
+  privateRoom: "/np6.jpeg",   // furnished private bedroom
+  careRoom: "/np5.jpeg",      // care room with an adjustable bed
+  diningRoom: "/np9.jpeg",    // dining room with chandelier and butler's pantry
+  kitchen: "/np8.jpeg",       // kitchen with granite island and breakfast bar
+  bathroom: "/np7.jpeg",      // accessible bath: roll-in shower, grab bars
+  office: "/np2.jpeg",        // office where families meet the team
+  patio: "/np1.jpeg",         // covered patio set for dining, under string lights
 };

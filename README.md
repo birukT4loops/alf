@@ -20,6 +20,35 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Contact form email
+
+The contact form posts to a Server Action (`app/contact/actions.ts`) that emails
+**sam.fereja@oakridgemanorliving.com** through [Resend](https://resend.com).
+The recipient is set in `app/lib/contact.ts`.
+
+Until the environment variables are set, the form shows visitors a message
+asking them to call or email instead — it never silently drops an enquiry.
+
+1. Create an API key at <https://resend.com/api-keys>.
+2. Verify `oakridgemanorliving.com` at <https://resend.com/domains> (add the DNS
+   records they give you), so mail can be sent *from* the domain.
+3. Copy `.env.example` to `.env.local` and fill in:
+
+   ```
+   RESEND_API_KEY=re_...
+   CONTACT_FROM="Oakridge Manor Living <website@oakridgemanorliving.com>"
+   ```
+
+4. Add the same two variables to the hosting provider (on Vercel:
+   Settings → Environment Variables), then redeploy.
+
+Before the domain is verified you can test with Resend's sandbox sender,
+`CONTACT_FROM="Oakridge Manor Living <onboarding@resend.dev>"`, which only
+delivers to the address that owns the Resend account.
+
+Replies go to the visitor's own address, so staff can answer straight from the
+email. The form also carries a hidden honeypot field to absorb bot spam.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
