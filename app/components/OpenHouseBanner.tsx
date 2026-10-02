@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PHONE_PRIMARY } from "../lib/contact";
 
-// Open house: Friday 2 and Saturday 3 October 2026.
+// Open house: Friday 2 and Saturday 3 October 2026, 10 AM to 7 PM both days.
 // The page is statically generated, so this date is checked at build time: the
 // first deploy after the event drops the banner on its own. Change the dates
 // here (and the copy below) for the next open house, or delete the component.
@@ -53,6 +53,16 @@ export default function OpenHouseBanner() {
           >
             Open House &mdash; Friday, October 2 &amp; Saturday, October 3
           </h2>
+          <p
+            className="inline-flex items-center gap-2 mt-3 text-sm md:text-base font-bold"
+            style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9.5" />
+              <path d="M12 7v5l3 2" />
+            </svg>
+            10 AM &ndash; 7 PM, both days
+          </p>
           <p
             className="text-sm md:text-base mt-2 leading-relaxed"
             style={{ fontFamily: "var(--font-open-sans), Arial, sans-serif", color: "var(--text-dark)" }}
