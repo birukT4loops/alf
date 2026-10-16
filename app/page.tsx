@@ -1,5 +1,4 @@
 import Hero from "./components/Hero";
-import OpenHouseBanner from "./components/OpenHouseBanner";
 import WelcomeHome from "./components/WelcomeHome";
 import OurPromise from "./components/OurPromise";
 import OurServices from "./components/OurServices";
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <OpenHouseBanner />
       <WelcomeHome />
       <OurPromise />
       <OurServices />
